@@ -2,6 +2,7 @@
 
 
   function insert_categories() {
+    global $connection;
     if(isset($_POST['submit'])) {
       $cat_title = $_POST['cat_title'];
 
