@@ -40,46 +40,24 @@
                               <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
                             </div>
                           </form>
+                          <?php
+                          if(isset($_GET['edit'])) {
+                            $cat_id = $_GET['edit'];
 
-                          <form class="" action="" method="post">
-                            <div class="form-group">
-                              <label for="cat-title">Edit Category</label>
-
-                              <?php
-
-                              if(isset($_GET['edit'])) {
-                                $cat_id = $_GET['edit'];
-                                $query = "SELECT * FROM categories WHERE cat_id = $cat_id";
-                                $select_categories_id = mysqli_query($connection, $query);
-
-                                while($row = mysqli_fetch_assoc($select_categories_id)) {
-                                  $cat_id = $row['cat_id'];
-                                  $cat_title = $row['cat_title'];
-                                  ?>
-                                  <!-- This will echo the category title inside of input text box -->
-                                  <input class="form-control" type="text" name="cat_title" value="<?php if(isset($cat_title)) echo $cat_title; ?>">
-                              <?php
-                                  }
-                              }
-                              ?>
-
-                              
-                            </div>
-                            <div class="form-group">
-                              <input class="btn btn-primary" type="submit" name="submit" value="Update">
-                            </div>
-                          </form>
-
+                            include "includes/update_categories.php";
+                          }
+                          ?>
                         </div>
                         <div class="col-xs-6">
-                          <table class="table table-bordered table-hover">
-                            <thead>
-                              <tr>
-                                <th>Id</th>
-                                <th>Category Title</th>
-                              </tr>
-                            </thead>
-                            <tbody>
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                            <tr>
+                              <th>Id</th>
+                              <th>Category Title</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+
                               <?php // Find All Categories Query
                               $query = "SELECT * FROM categories";
                               $select_categories = mysqli_query($connection, $query);
@@ -105,10 +83,6 @@
                                  header("Location: categories.php"); // will refresh the page
                                }
                                 ?>
-                              <!-- <tr>
-                                <td>Baseball</td>
-                                <td>Category</td>
-                              </tr> -->
                             </tbody>
                           </table>
                         </div>
