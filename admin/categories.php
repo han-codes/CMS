@@ -25,7 +25,7 @@
                               <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
                             </div>
                           </form>
-                          <?php
+                          <?php // UPDATE AND INCLUDE QUERY
                           if(isset($_GET['edit'])) {
                             $cat_id = $_GET['edit'];
 
