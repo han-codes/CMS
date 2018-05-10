@@ -10,8 +10,11 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-
-                        <!-- </div> -->
+                      <h1 class="page-header">
+                          Welcome to Admin
+                          <small>Author</small>
+                      </h1>
+                    </div>
 
                     </div>
                 </div>
