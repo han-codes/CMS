@@ -29,7 +29,28 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
+                          <!-- <tr> -->
+                          <?php
+
+                          $query = "SELECT * FROM categories";
+                          $select_posts = mysqli_query($connection, $query);
+
+                          while($row = mysqli_fetch_assoc($select_posts)) {
+                            $post_id = $row['post_id'];
+                            $post_author = $row['post_author'];
+                            $post_title = $row['post_title'];
+                            $post_category_id = $row['post_category_id'];
+                            $post_status = $row['post_status'];
+                            $post_image = $row['post_image'];
+                            $post_tags = $row['post_tags'];
+                            $post_comment_count = $row['post_comment_count'];
+                            $post_date = $row['post_date'];
+
+                            echo "<tr>";
+                            echo "<td>{$post_title}</td>";
+                          }
+
+                           ?>
                             <td>10</td>
                             <td>Edwin Diaz</td>
                             <td>Bootstrap Framework </td>
@@ -39,7 +60,7 @@
                             <td>Tags</td>
                             <td>Comments</td>
                             <td>Date</td>
-                          </tr>
+                          <!-- </tr> -->
                         </tbody>
                       </table>
                     </div>
