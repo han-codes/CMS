@@ -17,10 +17,12 @@
                       <?php
                       if (isset($_GET['source'])) {
                         $source = $_GET['source'];
+                      } else {
+                        $source = '';
                       }
                       switch($source) {
                         case '34':
-                          echo '';
+                          echo 'Nice 34';
                           break;
                         default:
                           include "includes/view_all_posts.php";
@@ -29,8 +31,8 @@
                        ?>
                     </div>
 
-                    </div>
-                </div>
+                  </div>
+              </div>
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
