@@ -40,10 +40,18 @@
       echo "<td>{$post_tags}</td>";
       echo "<td>{$post_comment_count}</td>";
       echo "<td>{$post_date}</td>";
+      echo "<td><a href='posts.php?delete={$post_id}'>Delete</a></td>";
       echo "</tr>";
     }
 
      ?>
+
+     <?php
+     if (isset($_GET['delete']) {
+       
+     }
+
+      ?>
       <td>10</td>
       <td>Edwin Diaz</td>
       <td>Bootstrap Framework </td>
