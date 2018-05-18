@@ -41,8 +41,9 @@ while($row = mysqli_fetch_assoc($select_posts_by_id)) {
   </div>
 
   <div class="form-group">
-    <label for="post_image">Post Image</label>
-    <input type="file" name="image">
+    <img width=100 src="../images/<?php echo $post_image; ?>" alt="post image">
+    <!-- <label for="post_image">Post Image</label>
+    <input type="file" name="image"> -->
   </div>
 
   <div class="form-group">
@@ -52,8 +53,7 @@ while($row = mysqli_fetch_assoc($select_posts_by_id)) {
 
   <div class="form-group">
     <label for="post_content">Post Content</label>
-    <textarea class="form-control" name="post_content" rows="10" cols="30">
-      <?php echo $post_content; ?>
+    <textarea class="form-control" name="post_content" rows="10" cols="30"><?php echo $post_content; ?>
     </textarea>
   </div>
 
