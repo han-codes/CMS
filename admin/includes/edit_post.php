@@ -2,7 +2,7 @@
 if (isset($_GET['p_id'])){
   $the_post_id =  $_GET['p_id'];
 }
-$query = "SELECT * FROM posts";
+$query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
 $select_posts_by_id = mysqli_query($connection, $query);
 
 while($row = mysqli_fetch_assoc($select_posts_by_id)) {
@@ -16,6 +16,10 @@ while($row = mysqli_fetch_assoc($select_posts_by_id)) {
   $post_tags = $row['post_tags'];
   $post_comment_count = $row['post_comment_count'];
   $post_date = $row['post_date'];
+}
+
+if (isset($_POST['update_post'])) {
+  echo "HI";
 }
  ?>
 
@@ -71,6 +75,6 @@ while($row = mysqli_fetch_assoc($select_posts_by_id)) {
   </div>
 
   <div class="form-group">
-    <input class="btn btn-primary" type="submit" name="create_post" value="Publish Post">
+    <input class="btn btn-primary" type="submit" name="update_post" value="Update Post">
   </div>
 </form>
