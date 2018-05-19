@@ -59,8 +59,6 @@ if (isset($_POST['update_post'])) {
 
   <div class="form-group">
     <img width=100 src="../images/<?php echo $post_image; ?>" alt="post image">
-    <!-- <label for="post_image">Post Image</label>
-    <input type="file" name="image"> -->
   </div>
 
   <div class="form-group">
