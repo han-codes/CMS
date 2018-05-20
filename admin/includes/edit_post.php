@@ -28,7 +28,7 @@ if (isset($_POST['update_post'])) {
   $post_content = $_POST['post_content'];
   $post_tags = $_POST['post_tags'];
 
-  move_uploaded_file($post_image_temp, "../images/$post_image");
+  move_uploaded_file($post_image_temp, "../images/'{$post_image}'");
   // if the $post_image is empty then it will use the image with the current post id
   if(empty($post_image)) {
     $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
@@ -45,7 +45,7 @@ if (isset($_POST['update_post'])) {
   $query .= "post_date = now(), ";
   $query .= "post_author = '{$post_author}', ";
   $query .= "post_status = '{$post_status}', ";
-  $query .= "post_tags = '{$post_tags},' ";
+  $query .= "post_tags = '{$post_tags}', ";
   $query .= "post_content = '{$post_content}', ";
   $query .= "post_image = '{$post_image}' ";
   $query .= "WHERE post_id = {$the_post_id} ";
@@ -62,7 +62,7 @@ if (isset($_POST['update_post'])) {
   </div>
 
   <div class="form-group">
-    <select class="" name="post_category">
+    <select name="post_category">
       <?php
       $query = "SELECT * FROM categories";
       $select_categories = mysqli_query($connection, $query);
@@ -81,7 +81,7 @@ if (isset($_POST['update_post'])) {
 
   <div class="form-group">
     <label for="post_author">Post Author</label>
-    <input type="text" name="author" class="form-control" value="<?php echo $post_author; ?>">
+    <input type="text" name="post_author" class="form-control" value="<?php echo $post_author; ?>">
   </div>
 
   <div class="form-group">
@@ -91,6 +91,7 @@ if (isset($_POST['update_post'])) {
 
   <div class="form-group">
     <img width=100 src="../images/<?php echo $post_image; ?>" alt="post image">
+    <input type="file" name="image">
   </div>
 
   <div class="form-group">
