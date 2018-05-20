@@ -40,6 +40,9 @@ if (isset($_POST['update_post'])) {
   $query .= "post_content = '{$post_content}', ";
   $query .= "post_image = '{$post_image}' ";
   $query .= "WHERE post_id = {$the_post_id} ";
+
+  $update_post = mysqli_query($connection, $query);
+  confirmQuery($update_post);
 }
  ?>
 
@@ -50,7 +53,7 @@ if (isset($_POST['update_post'])) {
   </div>
 
   <div class="form-group">
-    <select class="" name="">
+    <select class="" name="post_category">
       <?php
       $query = "SELECT * FROM categories";
       $select_categories = mysqli_query($connection, $query);
