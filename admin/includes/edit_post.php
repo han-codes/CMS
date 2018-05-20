@@ -19,14 +19,21 @@ while($row = mysqli_fetch_assoc($select_posts_by_id)) {
 }
 
 if (isset($_POST['update_post'])) {
-  echo "HI";
+  $post_author = $_POST['post_author'];
+  $post_title = $_POST['post_title'];
+  $post_category_id = $_POST['post_category'];
+  $post_status = $_POST['post_status'];
+  $post_image = $_FILES['image']['name'];
+  $post_image_temp = $_FILES['image']['tmp_name'];
+  $post_content = $_POST['post_content'];
+  $post_tags = $_POST['post_tags'];
 }
  ?>
 
 <form action="" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="title">Post Title</label>
-    <input type="text" name="title" class="form-control" value="<?php echo $post_title; ?>">
+    <input type="text" name="post_title" class="form-control" value="<?php echo $post_title; ?>">
   </div>
 
   <div class="form-group">
