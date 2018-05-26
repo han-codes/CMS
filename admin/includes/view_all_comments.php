@@ -67,17 +67,17 @@
      // Query to update status to approve
      if (isset($_GET['approve'])) {
        $the_comment_id = $_GET['approve'];
-       $query = "UPDATE comments SET comment_status = 'approve'
+       $query = "UPDATE comments SET comment_status = 'approved'
           WHERE comment_id = $the_comment_id";
        $unapprove_comment_query = mysqli_query($connection, $query);
        // refreshes the comments.php page
        header("Location: comments.php");
      }
 
-     // Query to update status to unapprove 
+     // Query to update status to unapprove
      if (isset($_GET['unapprove'])) {
        $the_comment_id = $_GET['unapprove'];
-       $query = "UPDATE comments SET comment_status = 'unapprove'
+       $query = "UPDATE comments SET comment_status = 'unapproved'
         WHERE comment_id = $the_comment_id";
        $unapprove_comment_query = mysqli_query($connection, $query);
        // refreshes the comments.php page
