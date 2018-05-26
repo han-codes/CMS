@@ -29,10 +29,9 @@
                   <?php
                   // fetches the associative array of the query we made
                   while($row = mysqli_fetch_assoc($select_categories_sidebar)) {
-                    // grabs the 'cat_title' rows
                     $cat_title = $row['cat_title'];
-                    // <li> tags to add it in our <ul> that is the navbar
-                    echo "<li><a href='#'>{$cat_title}</a></li>";
+                    $cat_id = $row['cat_id'];
+                    echo "<li><a href='category.php?category=$cat_id'>{$cat_title}</a></li>";
                     }
                    ?>
                 </ul>
