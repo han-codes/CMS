@@ -24,7 +24,8 @@
                   $post_author = $row['post_author'];
                   $post_date = $row['post_date'];
                   $post_image = $row['post_image'];
-                  $post_content = $row['post_content'];
+                  // limit the post_content to just the 1st 100 characters
+                  $post_content = substr($row['post_content'], 0, 100);
 
                   // ending our PHP right here
                   ?>
