@@ -26,6 +26,12 @@
                   $post_image = $row['post_image'];
                   // limit the post_content to just the 1st 100 characters
                   $post_content = substr($row['post_content'], 0, 100);
+                  $post_status = $row['post_status'];
+                  // if post_status equals published it'll continual to print the post
+                  // if post_status doesn't equal publish, you won't see the post
+                  if ($post_status !== 'published') {
+                    echo '<h1 class="text-center">post is not published yet.</h1>';
+                  } else {
 
                   // ending our PHP right here
                   ?>
@@ -49,7 +55,7 @@
                   <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                   <hr>
                   <!-- Closing the loop in php -->
-                  <?php  } ?>
+                  <?php  } } ?>
             </div><!-- col -->
             <!-- Blog Sidebar Widgets Column -->
             <?php include "includes/sidebar.php" ?>
