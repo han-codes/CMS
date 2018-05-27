@@ -72,7 +72,7 @@
                       if(!$create_comment_query) {
                         die("QUERY FAILED YO" . mysqli_error($connection));
                       }
-                    // auto-increment
+                    // auto-increment the post_comment_count
                     $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 ";
 
                     $query .= "WHERE post_id = {$the_post_id} ";
